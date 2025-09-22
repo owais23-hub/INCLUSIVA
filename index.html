@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>INCLUSIVA - University Event Platform (Secure + Comments + Admin Profile) — CSS Fix</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script defer src="/js/script.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <a href="#" id="homeLink" class="logo"><i class="fas fa-calendar-star"></i><span>INCLUSIVA</span></a>
+      <div class="header-actions">
+        <div id="themeToggle" class="theme-toggle" title="Toggle theme">
+          <i class="fas fa-sun"></i>
+          <div class="toggle-switch" aria-hidden="true"></div>
+          <i class="fas fa-moon"></i>
+          <span style="font-weight:800;">Dark Mode</span>
+        </div>
+        <button id="sidebarToggle" class="btn btn-primary btn-icon" style="display:none;"><i
+            class="fas fa-bars"></i><span class="btn-text" style="margin-left:8px;">Menu</span></button>
+      </div>
+    </div>
+  </header>
+  <section id="authSection" class="auth-container">
+    <div class="auth-box">
+      <div style="text-align:center;margin-bottom:12px;">
+        <h1 style="font-size:24px;margin-bottom:6px;">Welcome to INCLUSIVA</h1>
+        <div class="small-muted">Discover and host university events</div>
+      </div>
+
+      <div class="auth-tabs" role="tablist" aria-label="Authentication tabs">
+        <div id="authTabSlider" class="auth-tab-slider"></div>
+        <div class="auth-tab active" data-tab="student">Student</div>
+        <div class="auth-tab" data-tab="institution">Institution</div>
+        <div class="auth-tab" data-tab="admin">Admin</div>
+      </div>
+      <form id="studentLoginForm" class="auth-form active">
+        <h2 style="text-align:center;margin:12px 0;">Student Login</h2>
+        <div class="form-group"><label for="studentLoginEmail">Email</label><input id="studentLoginEmail" type="email"
+            placeholder="Enter your email" required>
+          <div class="form-message" id="studentLoginEmailMessage"></div>
+        </div>
+        <div class="form-group"><label for="studentLoginPassword">Password</label><input id="studentLoginPassword"
+            type="password" placeholder="Enter your password" required>
+          <div class="form-message" id="studentLoginPasswordMessage"></div>
+        </div>
+        <div style="display:flex;gap:12px;justify-content:center;align-items:center;"><button id="studentLoginBtn"
+            type="button" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>
+            Login</button></div>
+        <div style="text-align:center;margin-top:12px;">Don't have an account? <a href="#"
+            id="switchToStudentRegister">Register now</a></div>
+      </form>
+      <form id="studentRegisterForm" class="auth-form">
+        <h2 style="text-align:center;margin:12px 0;">Student Registration</h2>
+        <div class="form-group"><label for="studentRegisterUsername">Username</label><input id="studentRegisterUsername"
+            type="text" placeholder="Choose a username" required>
+          <div class="form-message" id="studentRegisterUsernameMessage"></div>
+        </div>
+        <div class="form-group"><label for="studentRegisterEmail">Email</label><input id="studentRegisterEmail"
+            type="email" placeholder="Enter your email" required>
+          <div class="form-message" id="studentRegisterEmailMessage"></div>
+        </div>
+        <div class="form-group"><label for="studentRegisterPassword">Password</label><input id="studentRegisterPassword"
+            type="password" placeholder="Create a password" required>
+          <div class="form-message" id="studentRegisterPasswordMessage"></div>
+          <div class="form-message" id="studentPasswordStrength"></div>
+        </div>
+        <div style="display:flex;gap:12px;justify-content:center;align-items:center;"><button id="studentRegisterBtn"
+            type="button" class="btn btn-primary"><i class="fas fa-user-plus"></i>
+            Register</button></div>
+        <div style="text-align:center;margin-top:12px;">Already have an account? <a href="#"
+            id="switchToStudentLogin">Login now</a></div>
+      </form>
+      <form id="institutionLoginForm" class="auth-form">
+        <h2 style="text-align:center;margin:12px 0;">Institution Login</h2>
+        <div class="form-group"><label for="institutionLoginEmail">Email</label><input id="institutionLoginEmail"
+            type="email" placeholder="Enter institution email" required>
+          <div class="form-message" id="institutionLoginEmailMessage"></div>
+        </div>
+        <div class="form-group"><label for="institutionLoginPassword">Password</label><input
+            id="institutionLoginPassword" type="password" placeholder="Enter your password" required>
+          <div class="form-message" id="institutionLoginPasswordMessage"></div>
+        </div>
+        <div style="display:flex;gap:12px;justify-content:center;align-items:center;"><button id="institutionLoginBtn"
+            type="button" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Login</button></div>
+        <div style="text-align:center;margin-top:12px;">Don't have an account? <a href="#"
+            id="switchToInstitutionRegister">Register now</a></div>
+      </form>
+      <form id="institutionRegisterForm" class="auth-form">
+        <h2 style="text-align:center;margin:12px 0;">Institution Registration</h2>
+        <div class="form-group"><label for="institutionRegisterUsername">Institution Name</label><input
+            id="institutionRegisterUsername" type="text" placeholder="Enter institution name" required>
+          <div class="form-message" id="institutionRegisterUsernameMessage"></div>
+        </div>
+
+        <div class="form-group"><label for="institutionRegisterEmail">Email</label><input id="institutionRegisterEmail"
+            type="email" placeholder="Enter institution email" required>
+          <div class="form-message" id="institutionRegisterEmailMessage"></div>
+        </div>
+        <div class="form-group"><label for="institutionRegisterPassword">Password</label><input
+            id="institutionRegisterPassword" type="password" placeholder="Create a password" required>
+          <div class="form-message" id="institutionRegisterPasswordMessage"></div>
+          <div class="form-message" id="institutionPasswordStrength"></div>
+        </div>
+        <div style="display:flex;gap:12px;justify-content:center;align-items:center;"><button
+            id="institutionRegisterBtn" type="button" class="btn btn-primary"><i class="fas fa-user-plus"></i>
+            Register</button></div>
+        <div style="text-align:center;margin-top:12px;">Already have an account? <a href="#"
+            id="switchToInstitutionLogin">Login now</a></div>
+      </form>
+      <form id="adminLoginForm" class="auth-form">
+        <h2 style="text-align:center;margin:12px 0;">Admin Login</h2>
+        <div class="form-group"><label for="adminLoginEmail">Email</label><input id="adminLoginEmail" type="email"
+            placeholder="Enter admin email" required>
+          <div class="form-message" id="adminLoginEmailMessage"></div>
+        </div>
+        <div class="form-group"><label for="adminLoginPassword">Password</label><input id="adminLoginPassword"
+            type="password" placeholder="Enter your password" required>
+          <div class="form-message" id="adminLoginPasswordMessage"></div>
+        </div>
+        <div style="display:flex;gap:12px;justify-content:center;align-items:center;"><button id="adminLoginBtn"
+            type="button" class="btn btn-primary"><i class="fas fa-user-shield"></i> Login</button></div>
+        <div style="text-align:center;margin-top:12px;">Don't have an admin account? <a href="#"
+            id="switchToAdminRegister">Register</a></div>
+      </form>
+      <form id="adminRegisterForm" class="auth-form">
+        <h2 style="text-align:center;margin:12px 0;">Admin Registration</h2>
+        <div class="form-group"><label for="adminRegisterUsername">Admin Username</label><input
+            id="adminRegisterUsername" type="text" placeholder="Enter an admin username" required>
+          <div class="form-message" id="adminRegisterUsernameMessage"></div>
+        </div>
+        <div class="form-group"><label for="adminRegisterEmail">Email</label><input id="adminRegisterEmail" type="email"
+            placeholder="Enter admin email" required>
+          <div class="form-message" id="adminRegisterEmailMessage"></div>
+        </div>
+        <div class="form-group"><label for="adminRegisterPassword">Password</label><input id="adminRegisterPassword"
+            type="password" placeholder="Create a password" required>
+          <div class="form-message" id="adminRegisterPasswordMessage"></div>
+          <div class="form-message" id="adminPasswordStrength"></div>
+        </div>
+        <div style="display:flex;gap:12px;justify-content:center;align-items:center;"><button id="adminRegisterBtn"
+            type="button" class="btn btn-primary"><i class="fas fa-user-plus"></i>
+            Register Admin</button></div>
+        <div style="text-align:center;margin-top:12px;">Already have an admin account? <a href="#"
+            id="switchToAdminLogin">Login</a></div>
+      </form>
+    </div>
+  </section>
+  <main id="mainContent" class="container main-content">
+    <h1 class="page-title">Upcoming Events</h1>
+    <div id="eventsColumn" class="events-column"></div>
+    <div id="pagination" class="pagination" aria-label="Pagination"></div>
+  </main>
+  <div id="eventPage" class="container page">
+    <button id="backFromEvent" class="btn btn-secondary" style="margin-bottom:16px;"><i class="fas fa-arrow-left"></i>
+      Back to Events</button>
+    <div class="page-content">
+      <div id="eventDetailContent"></div>
+    </div>
+  </div>
+  <div id="profilePage" class="container page">
+    <button id="backFromProfile" class="btn btn-secondary" style="margin-bottom:16px;"><i class="fas fa-arrow-left"></i>
+      Back to Events</button>
+    <div class="page-content">
+      <div id="profileContent"></div>
+    </div>
+  </div>
+  <div id="adminProfilePage" class="container page" style="display:none;">
+    <button id="backFromAdminProfile" class="btn btn-secondary" style="margin-bottom:16px;"><i
+        class="fas fa-arrow-left"></i> Back</button>
+    <div class="page-content">
+      <h2 class="page-title">Admin Dashboard</h2>
+      <div id="adminProfileContent" style="display:grid;gap:12px;">
+        <div style="display:flex;gap:12px;align-items:center;">
+          <div
+            style="width:72px;height:72px;border-radius:12px;background:var(--primary);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:24px;"
+            id="adminAvatar">A</div>
+          <div>
+            <div style="font-weight:800;font-size:1.1rem;" id="adminName">Admin</div>
+            <div class="small-muted" id="adminEmail">admin@example.com</div>
+            <div style="margin-top:8px;" class="small-muted" id="adminJoined">Joined: --</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <div
+            style="padding:12px;border-radius:8px;border:1px solid var(--border);background:transparent;min-width:160px;">
+            <div style="font-weight:800;font-size:1.2rem;" id="totalUsers">0</div>
+            <div class="small-muted">Total accounts</div>
+          </div>
+          <div
+            style="padding:12px;border-radius:8px;border:1px solid var(--border);background:transparent;min-width:160px;">
+            <div style="font-weight:800;font-size:1.2rem;" id="totalEvents">0</div>
+            <div class="small-muted">Total events</div>
+          </div>
+          <div
+            style="padding:12px;border-radius:8px;border:1px solid var(--border);background:transparent;min-width:160px;">
+            <div style="font-weight:800;font-size:1.2rem;" id="totalComments">0</div>
+            <div class="small-muted">Total comments</div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="margin-top:8px;">Quick Actions</h3>
+          <div style="display:flex;gap:8px;">
+            <button id="gotoManageUsers" class="btn btn-primary">Manage Users</button>
+            <button id="gotoManageEvents" class="btn btn-primary">Manage Events</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="myEventsPage" class="container page">
+    <button id="backFromMyEvents" class="btn btn-secondary" style="margin-bottom:16px;"><i
+        class="fas fa-arrow-left"></i> Back</button>
+    <div class="page-content">
+      <h2 class="page-title">My Hosted Events</h2>
+      <div id="myEventsColumn" class="events-column"></div>
+    </div>
+  </div>
+  <div id="adminUsersPage" class="container page">
+    <button id="backFromAdminUsers" class="btn btn-secondary" style="margin-bottom:16px;"><i
+        class="fas fa-arrow-left"></i> Back</button>
+    <div class="page-content">
+      <h2 class="page-title">Manage Users</h2>
+      <div id="adminUsersList" class="admin-list" style="margin-top:12px;"></div>
+    </div>
+  </div>
+  <div id="adminEventsPage" class="container page">
+    <button id="backFromAdminEvents" class="btn btn-secondary" style="margin-bottom:16px;"><i
+        class="fas fa-arrow-left"></i> Back</button>
+    <div class="page-content">
+      <h2 class="page-title">Manage Events</h2>
+      <div id="adminEventsList" class="admin-list" style="margin-top:12px;"></div>
+    </div>
+  </div>
+  <div id="eventCreationPage" class="container page">
+    <button id="backFromEventCreation" class="btn btn-secondary" style="margin-bottom:16px;"><i
+        class="fas fa-arrow-left"></i> Back</button>
+    <div class="page-content">
+      <h2 class="page-title">Create New Event</h2>
+      <form id="eventForm">
+        <div class="form-group"><label for="eventTitle">Event Title</label><input id="eventTitle" type="text" required>
+        </div>
+        <div class="form-group"><label for="eventDescription">Description</label><textarea id="eventDescription"
+            rows="5" required></textarea></div>
+        <div class="form-group"><label for="eventDate">Date</label><input id="eventDate" type="date" required></div>
+        <div class="form-group"><label for="eventTime">Time</label><input id="eventTime" type="time" required></div>
+        <div class="form-group"><label for="eventLocation">Location</label><input id="eventLocation" type="text"
+            required></div>
+        <div class="form-group"><label for="eventContact">Contact Information</label><input id="eventContact"
+            type="text" required></div>
+        <div class="form-group"><label for="eventRegistrationUrl">Registration URL (optional)</label><input
+            id="eventRegistrationUrl" type="url" placeholder="https://example.com/register"></div>
+        <div class="form-group"><label for="eventCategory">Category</label><select id="eventCategory" required>
+            <option value="">Select category</option>
+            <option value="Technology">Technology</option>
+            <option value="Science">Science</option>
+            <option value="Business">Business</option>
+            <option value="Arts">Arts</option>
+            <option value="Sports">Sports</option>
+            <option value="Education">Education</option>
+          </select></div>
+        <div class="form-group"><label>Event Images (Up to 10)</label>
+          <div id="imageUploadContainer" class="image-upload-container">
+            <div id="imageUploadButton" class="image-upload-box" title="Click to add images"><i
+                class="fas fa-plus"></i><span>Add Image</span><input id="imageInput" type="file" accept="image/*"
+                multiple style="display:none;"></div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center;margin-top:16px;"><button class="btn btn-primary"
+            type="submit"><i class="fas fa-calendar-plus"></i> Create Event</button></div>
+      </form>
+    </div>
+  </div>
+  <aside id="sidebar" class="sidebar" aria-hidden="true">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+      <h3 style="margin:0;">Menu</h3>
+      <button id="closeSidebar" class="btn btn-secondary"><i class="fas fa-times"></i></button>
+    </div>
+    <div>
+      <h4 style="margin-bottom:8px;">Navigation</h4>
+      <ul class="sidebar-menu">
+        <li><a href="#" id="sidebarHome"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#" id="sidebarProfileBtn"><i class="fas fa-user"></i> My Profile</a></li>
+        <li class="institution-only hidden"><a href="#" id="sidebarMyEventsBtn"><i class="fas fa-calendar-alt"></i> My
+            Events</a></li>
+        <li class="institution-only hidden"><a href="#" id="sidebarCreateEvent"><i class="fas fa-plus-circle"></i>
+            Create Event</a></li>
+        <li class="admin-only hidden"><a href="#" id="sidebarManageUsers"><i class="fas fa-users"></i> Manage Users</a>
+        </li>
+        <li class="admin-only hidden"><a href="#" id="sidebarManageEvents"><i class="fas fa-calendar-check"></i> Manage
+            Events</a></li>
+        <li><a href="#" id="sidebarDmBtn"><i class="fas fa-envelope"></i> Messages</a></li>
+        <li><a href="#" id="sidebarSearchBtn"><i class="fas fa-search"></i> Search</a></li>
+      </ul>
+      <h4 style="margin-top:18px;margin-bottom:8px;">Account</h4>
+      <ul class="sidebar-menu">
+        <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <button id="addEventBtn" class="btn btn-primary"
+    style="position:fixed;bottom:28px;right:28px;border-radius:50%;width:64px;height:64px;display:none;"><i
+      class="fas fa-plus"></i></button>
+  <div id="modalOverlay" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal" role="document" aria-labelledby="modalTitle">
+      <div style="display:flex;gap:12px;align-items:center;">
+        <i class="fas fa-exclamation-triangle" style="color:var(--danger);font-size:18px;"></i>
+        <div>
+          <div id="modalTitle" class="modal-title">Confirm action</div>
+          <div class="small-muted">This action cannot be undone.</div>
+        </div>
+      </div>
+      <div id="modalBody" class="modal-body">Are you sure?</div>
+      <div class="modal-actions">
+        <button id="modalCancelBtn" class="btn btn-secondary">Cancel</button>
+        <button id="modalConfirmBtn" class="btn btn-primary"><i class="fas fa-trash"></i> Confirm</button>
+      </div>
+    </div>
+  </div>
+  <div id="profileEditModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal" role="document" style="max-width:600px;">
+      <h2 class="modal-title">Edit Profile</h2>
+      <form id="profileEditForm">
+        <div class="form-group">
+          <label>Profile Picture</label>
+          <div id="profileImagePreviewContainer" style="display:flex;justify-content:center;margin-bottom:12px;">
+            <div class="profile-avatar" id="profileAvatarPreview" style="width:120px;height:120px;cursor:default;">
+              <div id="profileAvatarInitial">U</div>
+              <img id="profileAvatarImg" src="" style="display:none;">
+            </div>
+          </div>
+          <input type="file" id="profileImageInput" accept="image/*" style="display:none;">
+          <button type="button" id="changeProfileImageBtn" class="btn btn-secondary" style="width:100%;">Change Profile
+            Picture</button>
+        </div>
+        <div class="form-group">
+          <label for="profileAbout">About</label>
+          <textarea id="profileAbout" rows="5" placeholder="Tell us about yourself..."></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="profileEditCancel" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="dmPage" class="container page">
+    <button id="backFromDm" class="btn btn-secondary" style="margin-bottom:16px;"><i class="fas fa-arrow-left"></i>
+      Back</button>
+    <div class="page-content">
+      <h2 class="page-title">Direct Messages</h2>
+      <div class="dm-container">
+        <div class="dm-contacts">
+          <div class="dm-contact-search">
+            <input type="text" id="dmContactSearch" placeholder="Search users...">
+          </div>
+          <ul class="dm-contact-list" id="dmContactList"></ul>
+        </div>
+        <div class="dm-messages">
+          <div class="dm-messages-header" id="dmCurrentContact">
+            <div class="dm-contact-avatar" id="dmCurrentAvatar">U</div>
+            <div class="dm-contact-info">
+              <div class="dm-contact-name" id="dmCurrentName">Select a conversation</div>
+            </div>
+          </div>
+          <div class="dm-messages-content" id="dmMessagesContent"></div>
+          <div class="dm-message-input">
+            <input type="text" id="dmMessageInput" placeholder="Type a message..." disabled>
+            <button id="dmSendButton" disabled><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="searchPage" class="container page">
+    <button id="backFromSearch" class="btn btn-secondary" style="margin-bottom:16px;"><i class="fas fa-arrow-left"></i>
+      Back</button>
+    <div class="page-content">
+      <h2 class="page-title">Search Users</h2>
+      <div class="search-container">
+        <input type="text" class="search-input" id="userSearchInput"
+          placeholder="Search by username, email, or name...">
+      </div>
+      <div class="search-results" id="userSearchResults"></div>
+    </div>
+  </div>
+  <div id="profileEditModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal" role="document" style="max-width:600px;">
+      <h2 class="modal-title">Edit Profile</h2>
+      <form id="profileEditForm">
+        <div class="form-group">
+          <label>Profile Picture</label>
+          <div id="profileImagePreviewContainer" style="display:flex;justify-content:center;margin-bottom:12px;">
+            <div class="profile-avatar" id="profileAvatarPreview" style="width:120px;height:120px;cursor:default;">
+              <div id="profileAvatarInitial">U</div>
+              <img id="profileAvatarImg" src="" style="display:none;">
+            </div>
+          </div>
+          <input type="file" id="profileImageInput" accept="image/*" style="display:none;">
+          <button type="button" id="changeProfileImageBtn" class="btn btn-secondary" style="width:100%;">Change Profile
+            Picture</button>
+        </div>
+        <div class="form-group">
+          <label for="profileAbout">About</label>
+          <textarea id="profileAbout" rows="5" placeholder="Tell us about yourself..."></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="profileEditCancel" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="small-muted">INCLUSIVA - University Event Platform | Opportunities like these help students grow
+        beyond the classroom, network with professionals, and gain valuable experiences that shape their future
+        careers.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
